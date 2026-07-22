@@ -1,12 +1,5 @@
 import { create } from 'zustand'
-
-interface UserInfo {
-  id: number;
-  phone: string;
-  nickname: string;
-  avatar_url: string | null;
-  status: number;
-}
+import type { UserInfo } from '@/types'
 
 interface UserStore {
   userInfo: UserInfo;

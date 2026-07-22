@@ -1,3 +1,5 @@
+import type { AICharacter, ModelType } from '@/types';
+
 // 首先定义模型配置
 export const modelConfigs = [
   {
@@ -51,7 +53,6 @@ export const modelConfigs = [
     baseURL: "https://qianfan.baidubce.com/v2"
   }
 ] as const;
-export type ModelType = typeof modelConfigs[number]["model"];
 
 export interface AICharacter {
   id: string;
@@ -65,6 +66,8 @@ export interface AICharacter {
     name: string;
     prompt: string;
   }[]; // 可选的阶段
+  rag?: boolean;
+  knowledge?: string;
 }
 
 // 添加一个函数来生成带有群名的角色配置
